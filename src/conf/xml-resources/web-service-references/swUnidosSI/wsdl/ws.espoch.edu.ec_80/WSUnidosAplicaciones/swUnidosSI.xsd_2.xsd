@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://academico.espoch.edu.ec/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://academico.espoch.edu.ec/">
+
+<xs:complexType name="ArrayOfUnidadAcademica">
+<xs:sequence>
+<xs:element name="UnidadAcademica" type="tns:UnidadAcademica" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="UnidadAcademica">
+<xs:sequence>
+<xs:element name="Codigo" type="xs:string" minOccurs="0"/>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="CodEscuela" type="xs:string" minOccurs="0"/>
+<xs:element name="CodEstado" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfParametro">
+<xs:sequence>
+<xs:element name="Parametro" type="tns:Parametro" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Parametro">
+<xs:sequence>
+<xs:element name="strCodigo" type="xs:string" minOccurs="0"/>
+<xs:element name="strValor" type="xs:string" minOccurs="0"/>
+<xs:element name="strDescrip" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfFacultad">
+<xs:sequence>
+<xs:element name="Facultad" type="tns:Facultad" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Facultad">
+<xs:sequence>
+<xs:element name="Codigo" type="xs:string" minOccurs="0"/>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="Decano" type="xs:string" minOccurs="0"/>
+<xs:element name="Vicedecano" type="xs:string" minOccurs="0"/>
+<xs:element name="FechaCreacion" type="xs:dateTime"/>
+<xs:element name="Ubicacion" type="xs:string" minOccurs="0"/>
+<xs:element name="CodEstado" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfHorarioClaseParalelo">
+<xs:sequence>
+<xs:element name="HorarioClaseParalelo" type="tns:HorarioClaseParalelo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="HorarioClaseParalelo">
+<xs:complexContent>
+<xs:extension base="tns:HorarioClase">
+<xs:sequence>
+<xs:element name="strCodParalelo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="HorarioClase">
+<xs:sequence>
+<xs:element name="CodMateria" type="xs:string" minOccurs="0"/>
+<xs:element name="Materia" type="xs:string" minOccurs="0"/>
+<xs:element name="CodDia" type="xs:string" minOccurs="0"/>
+<xs:element name="Dia" type="xs:string" minOccurs="0"/>
+<xs:element name="Inicio" type="xs:string" minOccurs="0"/>
+<xs:element name="Fin" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfMateria">
+<xs:sequence>
+<xs:element name="Materia" type="tns:Materia" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Materia">
+<xs:sequence>
+<xs:element name="Codigo" type="xs:string" minOccurs="0"/>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfHorarioDocente">
+<xs:sequence>
+<xs:element name="HorarioDocente" type="tns:HorarioDocente" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="HorarioDocente">
+<xs:sequence>
+<xs:element name="strCodHora" type="xs:string" minOccurs="0"/>
+<xs:element name="strDescripcionHora" type="xs:string" minOccurs="0"/>
+<xs:element name="strInicioFinHora" type="xs:string" minOccurs="0"/>
+<xs:element name="strLunes" type="xs:string" minOccurs="0"/>
+<xs:element name="strMartes" type="xs:string" minOccurs="0"/>
+<xs:element name="strMiercoles" type="xs:string" minOccurs="0"/>
+<xs:element name="strJueves" type="xs:string" minOccurs="0"/>
+<xs:element name="strViernes" type="xs:string" minOccurs="0"/>
+<xs:element name="strSabado" type="xs:string" minOccurs="0"/>
+<xs:element name="strDomingo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfEscuelaEntidad">
+<xs:sequence>
+<xs:element name="EscuelaEntidad" type="tns:EscuelaEntidad" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="EscuelaEntidad">
+<xs:sequence>
+<xs:element name="Facultad" type="xs:string" minOccurs="0"/>
+<xs:element name="CodEscuela" type="xs:string" minOccurs="0"/>
+<xs:element name="Escuela" type="xs:string" minOccurs="0"/>
+<xs:element name="CodCarrera" type="xs:string" minOccurs="0"/>
+<xs:element name="Carrera" type="xs:string" minOccurs="0"/>
+<xs:element name="CodTipoEntidad" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfMateriaParalelo">
+<xs:sequence>
+<xs:element name="MateriaParalelo" type="tns:MateriaParalelo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MateriaParalelo">
+<xs:sequence>
+<xs:element name="Codigo" type="xs:string" minOccurs="0"/>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="Paralelo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ParamCarrera">
+<xs:sequence>
+<xs:element name="Residencia" type="xs:string" minOccurs="0"/>
+<xs:element name="Modalidad" type="xs:string" minOccurs="0"/>
+<xs:element name="NivelSuperior" type="xs:string" minOccurs="0"/>
+<xs:element name="SisAprobacion" type="xs:string" minOccurs="0"/>
+<xs:element name="SisEvaluacion" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfTitulosDocente">
+<xs:sequence>
+<xs:element name="TitulosDocente" type="tns:TitulosDocente" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TitulosDocente">
+<xs:sequence>
+<xs:element name="strCedula" type="xs:string" minOccurs="0"/>
+<xs:element name="strNombres" type="xs:string" minOccurs="0"/>
+<xs:element name="strApellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="strCodigo" type="xs:string" minOccurs="0"/>
+<xs:element name="strDescripcion" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Persona">
+<xs:sequence>
+<xs:element name="Cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="Apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="Nombres" type="xs:string" minOccurs="0"/>
+<xs:element name="Email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfDictado_Materia">
+<xs:sequence>
+<xs:element name="Dictado_Materia" type="tns:Dictado_Materia" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Dictado_Materia">
+<xs:sequence>
+<xs:element name="CodNivel" type="xs:string" minOccurs="0"/>
+<xs:element name="DescripcionNivel" type="xs:string" minOccurs="0"/>
+<xs:element name="Paralelo" type="xs:string" minOccurs="0"/>
+<xs:element name="Docente" type="tns:Persona" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfEstudiante">
+<xs:sequence>
+<xs:element name="Estudiante" type="tns:Estudiante" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Estudiante">
+<xs:sequence>
+<xs:element name="Cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="Nombres" type="xs:string" minOccurs="0"/>
+<xs:element name="Apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="CedMilitar" type="xs:string" minOccurs="0"/>
+<xs:element name="FechaNac" type="xs:string" minOccurs="0"/>
+<xs:element name="LugarNac" type="xs:string" minOccurs="0"/>
+<xs:element name="Nacionalidad" type="xs:string" minOccurs="0"/>
+<xs:element name="Direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="Telefono" type="xs:string" minOccurs="0"/>
+<xs:element name="Email" type="xs:string" minOccurs="0"/>
+<xs:element name="Sexo" type="xs:string" minOccurs="0"/>
+<xs:element name="EstadoCivil" type="xs:string" minOccurs="0"/>
+<xs:element name="Padre" type="xs:string" minOccurs="0"/>
+<xs:element name="Madre" type="xs:string" minOccurs="0"/>
+<xs:element name="Ciudad" type="xs:string" minOccurs="0"/>
+<xs:element name="Provincia" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfMateria_Pensum">
+<xs:sequence>
+<xs:element name="Materia_Pensum" type="tns:Materia_Pensum" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Materia_Pensum">
+<xs:sequence>
+<xs:element name="CodMateria" type="xs:string" minOccurs="0"/>
+<xs:element name="Materia" type="xs:string" minOccurs="0"/>
+<xs:element name="CodNivel" type="xs:string" minOccurs="0"/>
+<xs:element name="Nivel" type="xs:string" minOccurs="0"/>
+<xs:element name="CodArea" type="xs:string" minOccurs="0"/>
+<xs:element name="Area" type="xs:string" minOccurs="0"/>
+<xs:element name="Creditos" type="xs:float"/>
+<xs:element name="HorasTeoricas" type="xs:int"/>
+<xs:element name="HorasPracticas" type="xs:int"/>
+<xs:element name="HorasAutonomas" type="xs:int"/>
+<xs:element name="Requisitos" type="tns:ArrayOfMateria_Requisito" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfMateria_Requisito">
+<xs:sequence>
+<xs:element name="Materia_Requisito" type="tns:Materia_Requisito" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Materia_Requisito">
+<xs:sequence>
+<xs:element name="CodMateria" type="xs:string" minOccurs="0"/>
+<xs:element name="Materia" type="xs:string" minOccurs="0"/>
+<xs:element name="CodTipo" type="xs:string" minOccurs="0"/>
+<xs:element name="Tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfEscuela">
+<xs:sequence>
+<xs:element name="Escuela" type="tns:Escuela" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Escuela">
+<xs:sequence>
+<xs:element name="Codigo" type="xs:string" minOccurs="0"/>
+<xs:element name="Nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="Director" type="xs:string" minOccurs="0"/>
+<xs:element name="CodFacultad" type="xs:string" minOccurs="0"/>
+<xs:element name="FechaCreacion" type="xs:dateTime"/>
+<xs:element name="Ubicacion" type="xs:string" minOccurs="0"/>
+<xs:element name="CodEstado" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfRolCarrera">
+<xs:sequence>
+<xs:element name="RolCarrera" type="tns:RolCarrera" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RolCarrera">
+<xs:sequence>
+<xs:element name="CodigoCarrera" type="xs:string" minOccurs="0"/>
+<xs:element name="NombreRol" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfPeriodo">
+<xs:sequence>
+<xs:element name="Periodo" type="tns:Periodo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Periodo">
+<xs:sequence>
+<xs:element name="Codigo" type="xs:string" minOccurs="0"/>
+<xs:element name="Descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="FechaInicio" type="xs:dateTime"/>
+<xs:element name="FechaFin" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

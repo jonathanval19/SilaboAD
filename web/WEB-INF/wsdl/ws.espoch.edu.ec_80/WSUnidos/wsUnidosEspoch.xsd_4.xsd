@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://academico.espoch.edu.ec/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://academico.espoch.edu.ec/">
+
+<xs:complexType name="ArrayOfMateria_Pensum">
+<xs:sequence>
+<xs:element name="Materia_Pensum" type="tns:Materia_Pensum" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Materia_Pensum">
+<xs:sequence>
+<xs:element name="CodMateria" type="xs:string" minOccurs="0"/>
+<xs:element name="Materia" type="xs:string" minOccurs="0"/>
+<xs:element name="CodNivel" type="xs:string" minOccurs="0"/>
+<xs:element name="Nivel" type="xs:string" minOccurs="0"/>
+<xs:element name="CodArea" type="xs:string" minOccurs="0"/>
+<xs:element name="Area" type="xs:string" minOccurs="0"/>
+<xs:element name="Creditos" type="xs:float"/>
+<xs:element name="HorasTeoricas" type="xs:int"/>
+<xs:element name="HorasPracticas" type="xs:int"/>
+<xs:element name="HorasAutonomas" type="xs:int"/>
+<xs:element name="Requisitos" type="tns:ArrayOfMateria_Requisito" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ArrayOfMateria_Requisito">
+<xs:sequence>
+<xs:element name="Materia_Requisito" type="tns:Materia_Requisito" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Materia_Requisito">
+<xs:sequence>
+<xs:element name="CodMateria" type="xs:string" minOccurs="0"/>
+<xs:element name="Materia" type="xs:string" minOccurs="0"/>
+<xs:element name="CodTipo" type="xs:string" minOccurs="0"/>
+<xs:element name="Tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Periodo">
+<xs:sequence>
+<xs:element name="Codigo" type="xs:string" minOccurs="0"/>
+<xs:element name="Descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="FechaInicio" type="xs:dateTime"/>
+<xs:element name="FechaFin" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws.panalitico.dda/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.panalitico.dda/">
+
+<xs:complexType name="contenidosAD">
+<xs:complexContent>
+<xs:extension base="tns:contenidosComunes">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="contenidosComunes">
+<xs:sequence>
+<xs:element name="codPrograma" type="xs:string" minOccurs="0"/>
+<xs:element name="desc" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="unidades" type="tns:unidadComunes" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="unidadComunes">
+<xs:sequence>
+<xs:element name="codContenido" type="xs:string" minOccurs="0"/>
+<xs:element name="desc" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="temas" type="tns:temaComunes" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="temaComunes">
+<xs:sequence>
+<xs:element name="codUnidad" type="xs:string" minOccurs="0"/>
+<xs:element name="desc" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="subtemas" type="tns:subtemaComunes" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="subtemaComunes">
+<xs:sequence>
+<xs:element name="codTema" type="xs:string" minOccurs="0"/>
+<xs:element name="desc" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="archivoAD">
+<xs:complexContent>
+<xs:extension base="tns:archivoComunes">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="archivoComunes">
+<xs:sequence>
+<xs:element name="archivo" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="codigoCarrera" type="xs:string" minOccurs="0"/>
+<xs:element name="codigoEscuela" type="xs:string" minOccurs="0"/>
+<xs:element name="codigoFacultad" type="xs:string" minOccurs="0"/>
+<xs:element name="codigoInstitucion" type="xs:string" minOccurs="0"/>
+<xs:element name="idEntidad" type="xs:string" minOccurs="0"/>
+<xs:element name="opcionEntidad" type="xs:string" minOccurs="0"/>
+<xs:element name="tipoArchivo" type="xs:string" minOccurs="0"/>
+<xs:element name="tipoEntidad" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="procedimientosAD">
+<xs:complexContent>
+<xs:extension base="tns:procedimientosComunes">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="procedimientosComunes">
+<xs:sequence>
+<xs:element name="codPrograma" type="xs:string" minOccurs="0"/>
+<xs:element name="objListaProcedimientos" type="tns:procedimientoComunes" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="procedimientoComunes">
+<xs:sequence>
+<xs:element name="codPrograma" type="xs:string" minOccurs="0"/>
+<xs:element name="intCodigoPrograma" type="xs:int" minOccurs="0"/>
+<xs:element name="maximo" type="xs:int" minOccurs="0"/>
+<xs:element name="minimo" type="xs:int" minOccurs="0"/>
+<xs:element name="strDescripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="strEstado" type="xs:string" minOccurs="0"/>
+<xs:element name="nRelaciones" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bibliografiasComunes">
+<xs:sequence>
+<xs:element name="basica" type="tns:bibliografiaComunes" minOccurs="0"/>
+<xs:element name="bibliografias" type="tns:bibliografiaComunes" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="codPrograma" type="xs:string" minOccurs="0"/>
+<xs:element name="complementaria" type="tns:bibliografiaComunes" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bibliografiaComunes">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="id_bibliografia" type="xs:int" minOccurs="0"/>
+<xs:element name="id_seccion" type="xs:int" minOccurs="0"/>
+<xs:element name="libros" type="tns:bibliografiaLibroComunes" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="sitios" type="tns:bibliografiaSitioWebComunes" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+<xs:element name="url" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bibliografiaLibroComunes">
+<xs:sequence>
+<xs:element name="anio" type="xs:int" minOccurs="0"/>
+<xs:element name="autor" type="xs:string" minOccurs="0"/>
+<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
+<xs:element name="disabled" type="xs:string" minOccurs="0"/>
+<xs:element name="editorial" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bibliografiaSitioWebComunes">
+<xs:sequence>
+<xs:element name="anio" type="xs:int" minOccurs="0"/>
+<xs:element name="autor" type="xs:string" minOccurs="0"/>
+<xs:element name="dia" type="xs:int" minOccurs="0"/>
+<xs:element name="disabled" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="mes" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreSitio" type="xs:string" minOccurs="0"/>
+<xs:element name="url" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

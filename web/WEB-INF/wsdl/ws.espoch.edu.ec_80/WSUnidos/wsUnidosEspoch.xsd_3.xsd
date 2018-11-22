@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://sw.silabo.dda/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://sw.silabo.dda/">
+
+<xs:complexType name="estructuraDesarrolloAD">
+<xs:complexContent>
+<xs:extension base="tns:estructuraDesarrollo">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="estructuraDesarrollo">
+<xs:sequence>
+<xs:element name="ayuda" type="xs:string" minOccurs="0"/>
+<xs:element name="codPrograma" type="xs:string" minOccurs="0"/>
+<xs:element name="desc" type="xs:string" minOccurs="0"/>
+<xs:element name="observacion" type="tns:observaciones" minOccurs="0"/>
+<xs:element name="observaciones" type="tns:observacion" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="silabos" type="tns:silabo" minOccurs="0"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+<xs:element name="unidad" type="tns:unidades" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="unidadSistema" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="observaciones">
+<xs:sequence>
+<xs:element name="fechas" type="tns:fechaObservacion" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="numUnidades" type="xs:int" minOccurs="0"/>
+<xs:element name="observacion" type="tns:observacion" minOccurs="0"/>
+<xs:element name="secciones" type="tns:observacion" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="subsecciones" type="tns:observacion" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fechaObservacion">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="fecha" type="xs:string" minOccurs="0"/>
+<xs:element name="observaciones" type="tns:observacion" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="observacion">
+<xs:sequence>
+<xs:element name="descsec" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="fecha" type="xs:string" minOccurs="0"/>
+<xs:element name="idUnidad" type="xs:int" minOccurs="0"/>
+<xs:element name="id_observacion" type="xs:int" minOccurs="0"/>
+<xs:element name="observacion" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="silabo">
+<xs:sequence>
+<xs:element name="campoFormacion" type="xs:string" minOccurs="0"/>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="codCarrera" type="xs:string" minOccurs="0"/>
+<xs:element name="codMateria" type="xs:string" minOccurs="0"/>
+<xs:element name="idSilabo" type="xs:int" minOccurs="0"/>
+<xs:element name="idTipo" type="xs:int" minOccurs="0"/>
+<xs:element name="idUnidad" type="xs:int" minOccurs="0"/>
+<xs:element name="periodo" type="xs:string" minOccurs="0"/>
+<xs:element name="rol" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="unidades">
+<xs:sequence>
+<xs:element name="idUnidad" type="xs:string" minOccurs="0"/>
+<xs:element name="numUnidad" type="xs:int" minOccurs="0"/>
+<xs:element name="temas" type="tns:temas" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="temas">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="id_temas" type="xs:int" minOccurs="0"/>
+<xs:element name="sistema" type="xs:string" minOccurs="0"/>
+<xs:element name="subtemas" type="tns:subtemas" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="subtemas">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="id_temas_subtemas" type="xs:int" minOccurs="0"/>
+<xs:element name="sistema" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
